@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import entities.Endereco;
 import entities.Funcionario;
+import repositories.FuncionarioRepository;
 
 public class CadastrarFuncionario {
 	public void cadastrarFuncionario() {
@@ -52,6 +53,9 @@ public class CadastrarFuncionario {
 
 		System.out.print("UF.......:");
 		novoFuncionario.getEndereco().setEstado(scanner.nextLine());
+
+		var funcionarioRepository = new FuncionarioRepository();
+		funcionarioRepository.inserir(novoFuncionario);
 
 		scanner.close();
 
